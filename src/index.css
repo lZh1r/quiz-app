@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+    --font-primary: "Comfortaa", "sans-serif";
+    --color-dark: #23222c;
+    --color-card-back: #333243;
+    --color-button-back: #3e3c51;
+    --color-button-highlight: #504d68;
+}
