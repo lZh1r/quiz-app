@@ -1,5 +1,6 @@
 import HomePage from "./pages/HomePage.tsx";
 import {JSX} from "react";
+import QuizPage from "./pages/QuizPage.tsx";
 
 interface Quiz {
     id: number,
@@ -14,7 +15,7 @@ export const quizes: Quiz[] = [
         title: "Brainrot Test",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus vestibulum" +
             " diam, in dapibus massa condimentum ut. Curabitur nec scelerisque dui. Nulla ullamcorper, sem eget hendrerit mollis",
-        element: <HomePage/>
+        element: <QuizPage quizName="Brainrot Test"/>
     },
     {
         id: 1,
