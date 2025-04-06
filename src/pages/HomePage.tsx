@@ -10,5 +10,5 @@ export default function HomePage() {
                 {quizes.map((quiz) => <QuizTitleCard key={quiz.id} title={quiz.title} description={quiz.description} path={`/${quiz.id}`}/> )}
             </div>
         </div>
-    )
+    );
 }

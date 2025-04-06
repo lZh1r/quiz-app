@@ -14,5 +14,5 @@ export default function QuizTitleCard({title, description, path}: {title:string,
                 w-[100%] rounded-2xl p-2 bg-button-back hover:bg-button-highlight">Start</button>
             </Link>
         </div>
-    )
+    );
 }

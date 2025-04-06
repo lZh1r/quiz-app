@@ -10,5 +10,5 @@ export default function NotFoundPage() {
                         rounded-2xl p-3 bg-button-back hover:bg-button-highlight">Go to Hub</button>
             </Link>
         </div>
-    )
+    );
 }

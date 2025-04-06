@@ -56,5 +56,5 @@ export default function QuestionCard({questions}: {questions: QuizQuestion[]}) {
             }
 
         </div>
-    )
+    );
 }

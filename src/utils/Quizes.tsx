@@ -35,8 +35,18 @@ const sampleTest:QuizQuestion[] = [
             "Leopard Brown",
             "Pig Johnson"
         ]
+    },
+    {
+        text: "Who was in Gaza?",
+        correctOption: "Bombardiro Crocodilo",
+        options: [
+            "Bombardiro Crocodilo",
+            "Lirili Larila",
+            "Glorbo",
+            "Trippi Troppi"
+        ]
     }
-]
+];
 
 export const quizes: Quiz[] = [
     {
@@ -67,4 +77,4 @@ export const quizes: Quiz[] = [
             " diam, in dapibus massa condimentum ut. Curabitur nec scelerisque dui. Nulla ullamcorper, sem eget hendrerit mollis",
         element: <HomePage/>
     }
-]
+];

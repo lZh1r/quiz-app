@@ -19,5 +19,5 @@ export default function QuizPage({quizName, questions}: {quizName: string, quest
             </div>
             <QuestionCard questions={questions}/>
         </div>
-    )
+    );
 }
