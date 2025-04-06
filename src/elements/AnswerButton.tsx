@@ -1,6 +1,6 @@
 import {MouseEvent} from "react";
 
-type Callback = (e:MouseEvent<HTMLButtonElement>) => void
+type Callback = (e:MouseEvent<HTMLButtonElement>) => void;
 
 export default function AnswerButton({text, onClick}: {text: string, onClick:Callback}) {
     return (
