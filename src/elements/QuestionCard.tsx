@@ -47,7 +47,8 @@ export default function QuestionCard({questions}: {questions: QuizQuestion[]}) {
                     </h2>
                     <p className="text-gray-300 text-center text-xl">{questions[questionIndex].text}</p>
                     <div className="grid grid-cols-2">
-                        {options.map((text, index) => (
+                        {
+                            [...options].sort(() => Math.random() - 0.5).map((text, index) => (
                             <AnswerButton key={index} text={text} onClick={handleAnswer}/>
                         ))}
                     </div>

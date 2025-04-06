@@ -28,10 +28,10 @@ const sampleTest:QuizQuestion[] = [
     },
     {
         text: "Who is John's Biggest Rival?",
-        correctOption: "Tim Cheeese",
+        correctOption: "Tim Cheese",
         options: [
             "Johny Deez",
-            "Tim Cheeese",
+            "Tim Cheese",
             "Leopard Brown",
             "Pig Johnson"
         ]
