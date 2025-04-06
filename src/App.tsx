@@ -1,6 +1,6 @@
 import {createBrowserRouter, RouteObject, RouterProvider} from "react-router";
 import HomePage from "./pages/HomePage.tsx";
-import {quizes} from "./Quizes.tsx";
+import {quizes} from "./utils/Quizes.tsx";
 
 function App() {
 

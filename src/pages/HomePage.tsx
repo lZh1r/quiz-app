@@ -1,6 +1,6 @@
 import QuizTitleCard from "../elements/QuizTitleCard.tsx";
 
-import {quizes} from "../Quizes.tsx";
+import {quizes} from "../utils/Quizes.tsx";
 
 export default function HomePage() {
     return (
