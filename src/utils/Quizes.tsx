@@ -17,7 +17,7 @@ export interface QuizQuestion {
 
 const sampleTest:QuizQuestion[] = [
     {
-        text: "Who is John?",
+        text: "John Who?",
         correctOption: "Pork",
         options: [
             "Dork",
