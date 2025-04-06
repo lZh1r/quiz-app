@@ -1,6 +1,7 @@
 import {createBrowserRouter, RouteObject, RouterProvider} from "react-router";
 import HomePage from "./pages/HomePage.tsx";
 import {quizes} from "./utils/Quizes.tsx";
+import NotFoundPage from "./pages/NotFoundPage.tsx";
 
 function App() {
 
@@ -8,7 +9,8 @@ function App() {
 
   routes.push({
     path: '/',
-    element: <HomePage/>
+    element: <HomePage/>,
+    errorElement: <NotFoundPage/>
   })
 
   const router = createBrowserRouter(
