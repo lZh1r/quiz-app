@@ -3,7 +3,7 @@ export default function QuestionCard() {
 
 
     return (
-        <div className="bg-card-back rounded-4xl p-5 m-10 h-[80vh] flex flex-col justify-between">
+        <div className="bg-card-back rounded-4xl p-5 m-10 h-[80vh] flex flex-col justify-between font-primary">
             <h2 className="font-primary text-2xl text-white text-center p-3">Is this good?</h2>
             <p className="text-gray-400 text-center text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus vestibulum
                 diam, in dapibus massa condimentum ut. Curabitur nec scelerisque dui. Nulla ullamcorper, sem eget hendrerit mollis</p>
