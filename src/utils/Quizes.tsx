@@ -80,7 +80,7 @@ const sampleTest:QuizQuestion[] = [
         text: "How was Tim Cheese's Life Destroyed",
         correctOption: "He got fed up with Bob Bacon's bs after Simon Claw got caught and Tim became homeless",
         options: [
-            "He got fed up with Bob Bacon's bs after Simon Claw got caught and became homeless",
+            "He got fed up with Bob Bacon's bs after Simon Claw got caught and Tim became homeless",
             "John Pork killed Simon and injured Tim badly during a fierce fight",
             "The IRS started investigating Bob Bacon's business, which lead to his imprisonment and Tim's poverty",
             "Tim Cheese Respect Button"
