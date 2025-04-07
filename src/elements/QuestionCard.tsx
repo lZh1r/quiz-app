@@ -46,7 +46,7 @@ export default function QuestionCard({questions}: {questions: QuizQuestion[]}) {
                         Question {questionIndex + 1} / {questions.length}
                     </h2>
                     <p className="text-gray-300 text-center text-xl">{questions[questionIndex].text}</p>
-                    <div className="grid grid-cols-2">
+                    <div className="md:grid md:grid-cols-2 flex flex-col justify-center">
                         {
                             [...options].sort(() => Math.random() - 0.5).map((text, index) => (
                             <AnswerButton key={index} text={text} onClick={handleAnswer}/>
