@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion, useAnimation} from "motion/react";
 import {QuizQuestion} from "../utils/Quizes.tsx";
 import AnswerButton from "./AnswerButton.tsx";
 import {useEffect, useState, MouseEvent} from "react";
@@ -12,19 +12,33 @@ export default function QuestionCard({questions}: {questions: QuizQuestion[]}) {
     const [options, setOptions] = useState([""]);
     const [done, setDone] = useState(false);
 
+    const controls = useAnimation();
+
     useEffect(() => {
         setCorrectOption(questions[questionIndex].correctOption);
         setOptions(questions[questionIndex].options);
     }, [questionIndex, questions]);
 
-    function handleAnswer(e:MouseEvent<HTMLButtonElement>) {
+    async function handleAnswer(e:MouseEvent<HTMLButtonElement>) {
+
         const scoreChange = e.currentTarget.id === correctOption ? 1 : 0;
+
+        await controls.start({
+            opacity: 0,
+            transition: {duration: 0.3}
+        });
+
         setScore(s => s + scoreChange);
         if (questions.length - 1 === questionIndex) {
             setDone(true);
             return;
         }
         setQuestionIndex(i => i + 1);
+
+        await controls.start({
+            opacity: 1,
+            transition: {duration: 0.3}
+        });
     }
 
     return (
@@ -34,7 +48,11 @@ export default function QuestionCard({questions}: {questions: QuizQuestion[]}) {
             transition={{duration: 1}}
             className="font-primary bg-card-back rounded-4xl p-5 m-10">
             {done ?
-                <div className="md:h-[80vh] flex flex-col justify-center font-primary">
+                <motion.div
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    transition={{duration: 0.8}}
+                    className="md:h-[80vh] flex flex-col justify-center font-primary">
                     <h2 className="text-3xl text-white text-center p-3">
                         Your Score:
                     </h2>
@@ -45,10 +63,14 @@ export default function QuestionCard({questions}: {questions: QuizQuestion[]}) {
                         <button className="text-white cursor-pointer m-4 outline-2 outline-solid outline-white
                         rounded-2xl p-3 bg-button-back hover:bg-button-highlight">Go to Hub</button>
                     </Link>
-                </div> :
-                <div
+                </motion.div> :
+                <motion.div
+                    initial={{opacity: 1}}
+                    animate={controls}
                     className="md:h-[80vh] flex flex-col justify-between font-primary">
-                    <h2 className="text-2xl text-white text-center p-3">
+                    <h2
+
+                        className="text-2xl text-white text-center p-3">
                         Question {questionIndex + 1} / {questions.length}
                     </h2>
                     <p className="text-gray-300 text-center text-xl">{questions[questionIndex].text}</p>
@@ -58,7 +80,7 @@ export default function QuestionCard({questions}: {questions: QuizQuestion[]}) {
                             <AnswerButton key={index} text={text} onClick={handleAnswer}/>
                         ))}
                     </div>
-                </div>
+                </motion.div>
             }
 
         </motion.div>

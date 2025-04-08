@@ -18,7 +18,7 @@ export default function HomePage() {
             className="bg-dark">
             <h1 className="font-primary md:text-4xl text-3xl text-white text-center p-3">Simple Quiz App</h1>
             <div className="md:grid grid-cols-3">
-                {quizes.map((quiz) => <QuizTitleCard id={quiz.id} key={quiz.id} title={quiz.title} description={quiz.description} path={`/${quiz.id}`}/> )}
+                {quizes.map((quiz, index) => <QuizTitleCard id={index} key={quiz.id} title={quiz.title} description={quiz.description} path={`/${quiz.id}`}/> )}
             </div>
         </motion.div>
     );
