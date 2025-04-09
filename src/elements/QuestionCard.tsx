@@ -4,9 +4,12 @@ import AnswerButton from "./AnswerButton.tsx";
 import {useEffect, useState, MouseEvent} from "react";
 import {Link} from "react-router";
 
-export default function QuestionCard({questions}: {questions: QuizQuestion[]}) {
+type MaxScoreFunc = (arg0 : number) => void;
+
+export default function QuestionCard({questions, exportMaxScore}: {questions: QuizQuestion[], exportMaxScore:MaxScoreFunc}) {
 
     const [score, setScore] = useState(0);
+    const [maxScore, setMaxScore] = useState(0);
     const [questionIndex, setQuestionIndex] = useState(0);
     const [correctOption, setCorrectOption] = useState("");
     const [options, setOptions] = useState([""]);
@@ -31,6 +34,9 @@ export default function QuestionCard({questions}: {questions: QuizQuestion[]}) {
         setScore(s => s + scoreChange);
         if (questions.length - 1 === questionIndex) {
             setDone(true);
+            const newMaxScore = maxScore < score + scoreChange ? score + scoreChange : maxScore;
+            setMaxScore(newMaxScore);
+            exportMaxScore(newMaxScore);
             return;
         }
         setQuestionIndex(i => i + 1);

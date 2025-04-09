@@ -4,6 +4,8 @@ import QuizPage from "../pages/QuizPage.tsx";
 
 interface Quiz {
     id: number,
+    length?: number, //TODO: remove this and put all QuizQuestion arrays into a global array
+    maxScore?: number,
     title: string,
     description: string,
     element: JSX.Element
@@ -121,10 +123,11 @@ const sampleTest:QuizQuestion[] = [
 export const quizes: Quiz[] = [
     {
         id: 0,
+        length: 10,
         title: "Brainrot Test",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus vestibulum" +
             " diam, in dapibus massa condimentum ut. Curabitur nec scelerisque dui. Nulla ullamcorper, sem eget hendrerit mollis",
-        element: <QuizPage quizName="Brainrot Test" questions={sampleTest}/>
+        element: <QuizPage quizName="Brainrot Test" questions={sampleTest} id={0}/>
     },
     {
         id: 1,
