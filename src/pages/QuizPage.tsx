@@ -7,7 +7,7 @@ import {useEffect, useState} from "react";
 
 export default function QuizPage({quizName, questions, id}: {quizName: string, questions: QuizQuestion[], id:number}) {
 
-    const [maxScore, setMaxScore] = useState(0);
+    const [maxScore, setMaxScore] = useState(quizes[id].maxScore === undefined ? 0 : quizes[id].maxScore);
 
     useEffect(() => {
         quizes[id].maxScore = maxScore;
@@ -26,7 +26,7 @@ export default function QuizPage({quizName, questions, id}: {quizName: string, q
                 </Link>
                 <h1 className="font-primary md:text-4xl text-3xl text-white text-center p-3 place-self-center">{quizName}</h1>
             </div>
-            <QuestionCard exportMaxScore={getMaxScore} questions={questions}/>
+            <QuestionCard exportMaxScore={getMaxScore} questions={questions} id={id}/>
         </div>
     );
 }

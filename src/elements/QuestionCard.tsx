@@ -1,15 +1,15 @@
 import { motion, useAnimation} from "motion/react";
-import {QuizQuestion} from "../utils/Quizes.tsx";
+import {quizes, QuizQuestion} from "../utils/Quizes.tsx";
 import AnswerButton from "./AnswerButton.tsx";
 import {useEffect, useState, MouseEvent} from "react";
 import {Link} from "react-router";
 
 type MaxScoreFunc = (arg0 : number) => void;
 
-export default function QuestionCard({questions, exportMaxScore}: {questions: QuizQuestion[], exportMaxScore:MaxScoreFunc}) {
+export default function QuestionCard({questions, exportMaxScore, id}: {questions: QuizQuestion[], exportMaxScore:MaxScoreFunc, id:number}) {
 
     const [score, setScore] = useState(0);
-    const [maxScore, setMaxScore] = useState(0);
+    const [maxScore, setMaxScore] = useState(quizes[id].maxScore === undefined ? 0 : quizes[id].maxScore);
     const [questionIndex, setQuestionIndex] = useState(0);
     const [correctOption, setCorrectOption] = useState("");
     const [options, setOptions] = useState([""]);
@@ -20,7 +20,7 @@ export default function QuestionCard({questions, exportMaxScore}: {questions: Qu
     useEffect(() => {
         setCorrectOption(questions[questionIndex].correctOption);
         setOptions(questions[questionIndex].options);
-    }, [questionIndex, questions]);
+    }, [id, questionIndex, questions]);
 
     async function handleAnswer(e:MouseEvent<HTMLButtonElement>) {
 
