@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import {Link} from "react-router";
-import {quizes} from "../utils/Quizes.tsx";
+import {quizes, quizQuestionCollection} from "../utils/Quizes.tsx";
 
 export default function QuizTitleCard({title, description, path, id}: {title:string, description:string, path:string, id:number}) {
 
@@ -29,7 +29,7 @@ export default function QuizTitleCard({title, description, path, id}: {title:str
             <div>
                 <div className="flex justify-between text-white md:text-2xl text-xl mb-3">
                     <h2>{title}</h2>
-                    {quizMaxScore !== undefined && <h2>{quizMaxScore}/{quizes[id].length}</h2>}
+                    {quizMaxScore !== undefined && <h2>{quizMaxScore}/{quizQuestionCollection[id].length}</h2>}
                 </div>
                 <p className="text-gray-400 max-md:text-sm">{description}</p>
             </div>
